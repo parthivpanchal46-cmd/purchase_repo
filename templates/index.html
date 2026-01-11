@@ -1,0 +1,56 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Purchase Prediction</title>
+</head>
+
+<body style="background:#eef2f3;font-family:Arial;">
+
+<div style="
+    width:360px;
+    margin:100px auto;
+    background:white;
+    padding:25px;
+    border-radius:10px;
+    box-shadow:0 0 10px #bbb;
+">
+
+<h2 style="text-align:center;color:#333;">
+    Purchase Prediction
+</h2>
+
+<form method="POST" action="/predict">
+
+    <label>Age:</label>
+    <input type="number" name="age" required
+    style="width:100%;padding:8px;margin:8px 0;">
+
+    <label>Salary:</label>
+    <input type="number" name="salary" required
+    style="width:100%;padding:8px;margin:8px 0;">
+
+    <button type="submit"
+    style="
+        width:100%;
+        padding:10px;
+        background:#007BFF;
+        color:white;
+        border:none;
+        border-radius:5px;
+        font-size:16px;
+        cursor:pointer;
+    ">
+        Predict
+    </button>
+</form>
+
+{% if prediction %}
+    <h3 style="text-align:center;margin-top:20px;">
+        {{ prediction }}
+    </h3>
+{% endif %}
+
+</div>
+
+</body>
+</html>
